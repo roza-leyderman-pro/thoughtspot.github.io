@@ -2,13 +2,15 @@
 title: [Snowflake Partner Connect]
 last_updated: 2/19/2020
 toc: true
-summary: "With Snowflake Partner Connect you get a free trial of ThoughtSpot that allows you to try out ThoughtSpot Embrace to connect to Snowflake."
+summary: "With Snowflake Partner Connect, you get a free trial of ThoughtSpot so you can connect to Snowflake through Embrace."
 sidebar: mydoc_sidebar
 permalink: /:collection/:path.html
 ---
 Snowflake Partner Connect allows you to quickly and easily try out ThoughtSpot connected to Snowflake, using ThoughtSpot Embrace.
 
-Snowflake Partner Connect benefits:
+## Advantages of using Snowflake Partner Connect
+
+Snowflake Partner Connect benefits include:
 - Easy to sign up
 - Up and running in 5 minutes
 - Zero ThoughtSpot software cost

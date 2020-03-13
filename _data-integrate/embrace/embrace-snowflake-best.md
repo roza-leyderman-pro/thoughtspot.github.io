@@ -1,6 +1,6 @@
 ---
 title: [Best practices for Embrace with Snowflake]
-last_updated: 01/15/2020
+last_updated: 02/28/2020
 summary: "You can connect to Snowflake using ThoughtSpot Embrace, and start searching your data. This article contains helpful pointers on data modeling."
 sidebar: mydoc_sidebar
 permalink: /:collection/:path.html
@@ -13,19 +13,19 @@ ThoughtSpot works with relational data, where data must be in the form of a tabl
 
 The Snowflake warehouse uses more flexible requirements for storing data, such as the `VARIANT` data type to store JSON. However, the user experience when searching directly on JSON data in ThoughtSpot is not as good as searching over relational data.
 
-For example, if you connect to the Snowflake Free Trail sample WEATHER dataset, and search it in ThoughtSpot, the `DAILY_14_TOTAL` table features JSON data.
+For example, if you connect to the Snowflake Free Trail sample `WEATHER` dataset, and search it in ThoughtSpot, the `DAILY_14_TOTAL` table features JSON data.
 
 ![JSON data in Snowflake]({{ site.baseurl }}/images/snowflake-jsondata.png "JSON data in Snowflake")
 
 To make this data searchable in ThoughtSpot, you must first create a view in Snowflake, which effectively makes the JSON data into relational (table) data. You can then search this data in ThoughtSpot, and generate chart and table results from your searches. This process is called “schema on read”.
 
-### Create a view in snowflake
+### Create a view in Snowflake
 
 To create a view from a Snowflake table that contains JSON, follow these steps:
 
 1. Log in to your Snowflake instance.
 
-2. If necessary, change your role so you can issue `CREATE VIEW` DDL statement in the target schema. See [CREATE VIEW](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html) in Snowflake.
+2. If necessary, change your [Role]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#role) so you can issue `CREATE VIEW` DDL statement in the target [Schema]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#schema). See [CREATE VIEW](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html){:target="_blank"} in Snowflake documentation.
 
     ![Switch roles in Snowflake]({{ site.baseurl }}/images/snowflake-switch-role.png "Switch roles in Snowflake")
 
@@ -35,7 +35,7 @@ To create a view from a Snowflake table that contains JSON, follow these steps:
 
 4. Issue the `CREATE VIEW` statement.
 
-   See [CREATE VIEW Syntax](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html#syntax).
+   See [CREATE VIEW Syntax](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html#syntax){:target="_blank"} in Snowflake documentation.
 
    The following example uses the sample `WEATHER` data from the **Snowflake Free Trial** sample data:
 
@@ -74,7 +74,6 @@ LIMIT 20;
 6. In ThoughtSpot Embrace, add a connection to Snowflake, specifically to the view you created.
 
    See [Connect to Snowflake through Embrace](#connect-snowflake).
-
 
 When you subsequently search in ThoughtSpot against the Snowflake view, you can easily create charts and graphs, as expected.
 

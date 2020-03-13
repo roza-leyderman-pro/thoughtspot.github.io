@@ -1,7 +1,7 @@
 ---
 title: [Add a Snowflake connection]
-last_updated: 1/29/2020
-toc: true
+last_updated: 2/28/2020
+toc: false
 sidebar: mydoc_sidebar
 permalink: /:collection/:path.html
 ---
@@ -15,11 +15,13 @@ To add a new connection to Snowflake:
 
      ![]({{ site.baseurl }}/images/new-connection.png "New db connect")
 
-3. Create a name for your connection, a description (optional), then select the Snowflake connection type, and click **Continue**.
+3. Create a name for your connection ([Connection name]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#connecion_name)), an optional [Connection description]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#connection_description), then select the Snowflake connection type, and click **Continue**.
 
      ![Add a Snowflake connection]({{ site.baseurl }}/images/snowflake-connectiontype.png "Add a Snowflake connection")
 
-4. Enter the connection details for your Snowflake data source, and click **Continue**.
+4. Enter the connection details for your Snowflake data source: [Account name]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#account_name), [User]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#user), [Password]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#password), [Role]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#role), [Warehouse]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#warehouse), [Database]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#database), and [Schema]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#schema).
+
+   Click **Continue**.
 
     ![Enter connection details]({{ site.baseurl }}/images/snowflake-connectiondetails.png "Enter connection details")
 
@@ -29,14 +31,14 @@ To add a new connection to Snowflake:
 
     ![Select tables and columns for your connection]({{ site.baseurl }}/images/snowflake-selecttables.png "Select tables and columns for your connection")
 
-   Once the connection is added, you can search your Snowflake database right away by clicking **Search now**.
+   After you add the connection, you can immediately search your Snowflake database by clicking **Search now**.
 
    ![The "Connection created" screen]({{ site.baseurl }}/images/snowflake-connectioncreated.png "The "Connection created" screen")
 
 
    Your new connection appears on the **Data** > **Connections** page. You can click the name of your connection to view the tables and columns in your connection.   
 
-The connection you just created is a link to the external data source. If there are any joins in the selected tables of the external data source, those are imported into ThoughtSpot.
+The connection you just created is a link to the external data source. If there are any joins in the selected tables of the external data source, they are imported into ThoughtSpot.
 
 You can now perform a live query on the selected tables and columns of your connection. Because the selected tables and columns in your connection are linked, it may take a while to initially render the search results. This is because ThoughtSpot does not cache linked data. With linked data, ThoughtSpot queries the external database directly, which is slower than querying data that is stored in ThoughtSpot's database.
 

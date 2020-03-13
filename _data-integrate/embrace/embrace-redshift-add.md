@@ -1,7 +1,7 @@
 ---
 title: [Add a Redshift connection]
-last_updated: 1/29/2020
-toc: true
+last_updated: 02/28/2020
+toc: false
 sidebar: mydoc_sidebar
 permalink: /:collection/:path.html
 ---
@@ -15,11 +15,13 @@ To add a new connection to Redshift:
 
     ![Click "+ Add connection"]({{ site.baseurl }}/images/redshift-addconnection.png "Click "+ add connection"")
      <!-- ![]({{ site.baseurl }}/images/new-connection.png "New db connect") -->
-3. Create a name for your connection, a description (optional), then select the Redshift connection type, and click **Continue**.
+3. Create a name for your connection ([Connection name]({{ site.baseurl }}/data-integrate/embrace/embrace-redshift-reference.html#connecion_name)), an optional [Connection description]({{ site.baseurl }}/data-integrate/embrace/embrace-redshift-reference.html#connection_description), and then select the Redshift connection type, and click **Continue**.
 
     ![Choose connection type]({{ site.baseurl }}/images/redshift-choosetype.png "Choose connection type")
      <!-- ![]({{ site.baseurl }}/images/select-new-connection.png "Select a new connection type") -->
-4. Enter the connection details for your external data source, and click **Continue**.
+4. Enter the connection details for your external data source: [Host]({{ site.baseurl }}/data-integrate/embrace/embrace-redshift-reference.html#host), [Port]({{ site.baseurl }}/data-integrate/embrace/embrace-redshift-reference.html#port), [User]({{ site.baseurl }}/data-integrate/embrace/embrace-redshift-reference.html#user), [Password]({{ site.baseurl }}/data-integrate/embrace/embrace-redshift-reference.html#password), and [Database]({{ site.baseurl }}/data-integrate/embrace/embrace-redshift-reference.html#database).
+
+    Click **Continue**.
 
     ![Enter connection details]({{ site.baseurl }}/images/redshift-connectiondetails.png "Enter connection details")
      <!-- ![]({{ site.baseurl }}/images/new-connection-creds.png "Select a connection type") -->
@@ -30,7 +32,7 @@ To add a new connection to Redshift:
 
      ![Select tables and columns]({{ site.baseurl }}/images/snowflake-selecttables.png "Select tables and columns")
 
-   Once the connection is added, you can search your Redshift database right away by clicking **Search now**.
+   After you add the connection, you can immediately search your Redshift database by clicking **Search now**.
 
    ![The "connection created" screen]({{ site.baseurl }}/images/redshift-connectioncreated.png "The "connection created" screen")
 

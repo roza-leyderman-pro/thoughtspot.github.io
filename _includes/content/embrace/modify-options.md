@@ -1,0 +1,5 @@
+- [Edit a connection](#edit-connection) to add or remove tables and columns
+- [Remap a connection](#remap-connection) to map a table or column to a different table or column
+- [Delete a table](#delete-table)
+- [Delete a table with dependencies](#delete-table-dependencies)
+- [Delete a connection](#delete-connection)

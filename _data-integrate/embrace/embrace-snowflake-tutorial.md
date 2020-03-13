@@ -19,7 +19,7 @@ To join tables in a Snowflake connection, do the following:
 
 3. Click the name of your Snowflake connection.
 
-   ![]({{ site.baseurl }}/images/select-connection.png "select Connection")
+   ![]({{ site.baseurl }}/images/snowflake-select-connection.png "select Connection")
 
 4. Click **Edit connection** at the upper-right-hand side of the page.
 

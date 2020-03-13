@@ -1,80 +1,68 @@
 ---
 title: [Modify a Snowflake connection]
-last_updated: 1/29/2020
+last_updated: 2/28/2020
 summary: Learn how to modify a Snowflake connection and its tables.
 sidebar: mydoc_sidebar
 permalink: /:collection/:path.html
 ---
 
 You can modify an Embrace Snowflake connection in the following ways:
-- Edit a connection: to add or remove tables and columns
-- Remap a connection: to map a table or column to a different table or column
-- Delete a table
-- Delete a connection
+{% include content/embrace/modify-options.md %}
 
+{: id="edit-connection"}
 ## Editing a Snowflake connection
 
 You can edit a Snowflake connection to add tables and columns.
 
-To edit a connection:
+{% include content/embrace/edit-connection-1-3.md %}
 
-1. Click **Data** in the top navigation bar.
+   ![Select connection]({{ site.baseurl }}/images/snowflake-select-connection.png "Select Connection")
 
-2. Click the **Connections** tab at the top of the page.
-
-3. Click the name of the connection you want to edit.
-
-   ![]({{ site.baseurl }}/images/select-connection.png "select Connection")
-
-4. Click **Edit connection** at the upper-right-hand side of the page.
+{% include content/embrace/edit-connection-4.md %}
 
    ![Edit connection]({{ site.baseurl }}/images/snowflake-editconnection.png "Edit connection")
 
-5. On the Choose connection type page, change the connection name or description (if needed), and then click **Continue**.  
+5. On the **Choose connection type** page, you have the option to change the [Connection name]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#connecion_name) or [Connection description]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#connection_description).
 
-6. On the Snowflake connection details page, make any changes needed, and then click **Continue**.
+   Click **Continue**.  
 
-7. Expand the database table drop-down menu, and select the tables and columns you want to add.
+6. On the Snowflake connection details page, make any necessary changes (to [Account name]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#account_name), [User]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#user), [Password]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#password), [Role]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#role), [Warehouse]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#warehouse), [Database]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#database), or [Schema]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#schema)), and then click **Continue**.
 
-    ![Select tables and columns]({{ site.baseurl }}/images/redshift-edittables.png "Select tables and columns")
-   <!-- ![]({{ site.baseurl }}/images/connection-update.png "Edit connection dialog box") -->
+   Refer to the [Snowflake connection reference]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-reference.html#) for more information on each of the specific attributes you must enter for your connection.
 
-8. Click **Update**, and then click **Confirm** to save the updated connection detail.
+{% include content/embrace/edit-connection-7-8.md %}
 
-To remove a table from a connection, delete it from the connection details page. For more information, see [Deleting a table]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-modify.html#deleting-a-table-from-a-snowflake-connection).
+To remove a table from a connection, delete it from the connection details page. See [Deleting a table]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-modify.html#delete-table).
 
+{% include tip.html content="You cannot remove an existing table column from Embrace." %}
+
+{: id="remap-connection"}
 ## Remapping a Snowflake connection
 
-Modify the connection parameters by editing the source mapping <code>yaml</code> file that was created when you added the connection. For example, you can remap the existing table or column to a different table or column in an existing database connection. ThoughtSpot recommends that you check the dependencies before and after you remap a table or column in a connection to ensure they display as intended.
+{% include content/embrace/remap-intro-1-3.md %}
 
-To remap a connection:
+   ![Select a connection type]({{ site.baseurl }}/images/snowflake-select-connection.png "Select a connection type")
 
-1. Click **Data** in the top navigation bar.
-
-2. Click the **Connections** tab at the top of the page.
-
-3. Click the name of the connection you want to remap.
-
-   ![]({{ site.baseurl }}/images/select-connection.png "Select a connection type")
-
-4. Click the More Info icon ![more options menu icon]({{ site.baseurl }}/images/icon-ellipses.png){: .inline} and select **Remapping** on the upper-right-hand side of the page.
+{% include content/embrace/remap-4.md %}
 
     ![Remap a connection]({{ site.baseurl }}/images/snowflake-remapping.png "Remap a connection")
 
-5. Click **Download** to download the source mapping file.
+{% include content/embrace/remap-5.md %}
 
     !["Download the source mapping file"]({{ site.baseurl }}/images/snowflake-downloadyaml.png "Download the source mapping file")
 
-6. Edit the file, as required, and save it.
+{% include content/embrace/remap-6.md %}
 
-    ![]({{ site.baseurl }}/images/embrace-yaml.png "Edit yaml")
+    ![Edit yaml file]({{ site.baseurl }}/images/snowflake-yaml.png "Edit yaml")
 
-7. Finally, click **Browse your files**, and upload your edited mapping file to update the mapping of your connection.
+{% include content/embrace/remap-7.md %}
 
+{: id="delete-table"}
 ## Deleting a table from a Snowflake connection
+
 ThoughtSpot checks for dependencies whenever you try to remove a table in a connection. ThoughtSpot shows a list of dependent objects, and you can click them to delete them or remove the dependency. Then you can remove the table.
 
-To delete a table:
+To delete a table, follow these steps:
 
 1. Click **Data** in the top navigation bar.
 
@@ -82,7 +70,7 @@ To delete a table:
 
 3. Click the name of the connection that contains the table you want to delete.
 
-   ![]({{ site.baseurl }}/images/select-connection.png "Select a connection type")
+   ![]({{ site.baseurl }}/images/snowflake-select-connection.png "Select a connection type")
 
 4. Find the table you want to delete in the list, and check the box next to its name.
 
@@ -90,22 +78,25 @@ To delete a table:
 
     ![Delete a connection table]({{ site.baseurl }}/images/snowflake-deletetable.png "Delete a connection table")
 
-    If you attempt to delete a table with dependent objects, the operation is blocked. A *Cannot delete* window appears, with a list of links to dependent objects. See [Deleting a table with dependent objects]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-modify.html#deleting-a-table-with-dependent-objects)
+    If you attempt to delete a table with dependent objects, the operation is blocked. A *Cannot delete* window appears, with a list of links to dependent objects. See [Deleting a table with dependent objects]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-modify.html#deleting-a-table-with-dependent-objects).
 
-### Deleting a table with dependent objects
+{: id="delete-table-dependencies"}
+## Deleting a table with dependent objects
 
-- In the *Cannot delete* window, click the link for each object to modify or delete it.
+In the *Cannot delete* window, click the link for each object to modify or delete it.
 
-   When all dependencies are removed, you can delete the table.
+After handling and removing all dependencies, you can delete the table.
 
-   ![]({{ site.baseurl }}/images/delete-warning.png "Dependent objects warning")
+![]({{ site.baseurl }}/images/delete-warning.png "Dependent objects warning")
 
 You can also click the name of a table and then click the linked objects to see a list of dependent objects with links. The list shows the names of the dependent objects (worksheets, pinboards or answers), and the columns they use from that table. You can use this information to determine the impact of changing the structure of the data source or to see how widely used it is. Click a dependent object to modify or delete it.
 
+{: id="delete-connection"}
 ## Deleting a Snowflake connection
+
 A connection can be used in multiple data sources or visualizations. Because of this, you must delete all of the sources and tasks that use that connection, before you can delete the connection.
 
-To delete a connection:
+To delete a connection, follow these steps:
 
 1. Click **Data** in the top navigation bar.
 
@@ -115,12 +106,15 @@ To delete a connection:
 
 4. Click **Delete**, and then click **Delete** again to confirm.
 
-   ![]({{ site.baseurl }}/images/delete-a-connection.png "delete a connection type")
+   ![Delete connection]({{ site.baseurl }}/images/snowflake-delete-connection.png "delete a connection")
+   <!--![]({{ site.baseurl }}/images/delete-a-connection.png "delete a connection type")-->
 
-   If you attempt to delete a connection with dependent objects, the operation is blocked, and a "Cannot delete" warning appears with a list of dependent objects with links.
+   If you attempt to delete a connection with dependent objects, the operation is blocked, and a *Cannot delete* warning appears, with a list of linked dependent objects.
 
    ![]({{ site.baseurl }}/images/connection-delete-warning.png "warning connection type")
 
-5. If the "Cannot delete" warning appears, click the link for each object to delete it, and then click **Ok**. Otherwise, go to the next step.
+5. If the *Cannot delete* warning appears, click the link for each object to delete it, and then click **Ok**. Otherwise, go to the next step.
 
-6. When all its dependencies are removed, delete the connection by clicking **Delete**, and then click again **Delete** to confirm.
+6. After handling and removing all dependencies, you can delete the connection by clicking **Delete**, and then clicking **Delete** again to confirm.
+
+{% include tip.html content="You candelete multiple Embrace." %}
